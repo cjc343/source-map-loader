@@ -35,7 +35,7 @@ module.exports = function(input, inputMap) {
 					return untouched();
 				}
 				addDependency(result);
-				fs.readFile(result, "utf-8", function(err, content) {
+				fs.readFile(result, function(err, content) {
 					if(err) {
 						emitWarning("Cannot open SourceMap '" + result + "': " + err);
 						return untouched();
@@ -65,7 +65,7 @@ module.exports = function(input, inputMap) {
 						return callback(null, null);
 					}
 					addDependency(result);
-					fs.readFile(result, "utf-8", function(err, content) {
+					fs.readFile(result, function(err, content) {
 						if(err) {
 							emitWarning("Cannot open source file '" + result + "': " + err);
 							return callback(null, null);
