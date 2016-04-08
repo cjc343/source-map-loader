@@ -97,7 +97,7 @@ describe("source-map-loader", function() {
 				"sources":[
 					path.join(__dirname, "fixtures", "external-source-map2.txt")
 				],
-				"sourcesContent":["with SourceMap"],
+				"sourcesContent":[new Buffer("with SourceMap")],
 				"mappings":"AAAA"
 			});
 			deps.should.be.eql([
